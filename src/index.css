@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-red: #B91C1C;
+  --secondary-red: #DC2626;
+  --dark-crimson: #991B1B;
+  --text-dark: #111111;
+  --text-gray: #666666;
+  --bg-light: #FFFFFF;
+  --bg-gray: #F8F9FA;
+  --border-light: #E0E0E0;
+  --success: #28A745;
+  --accent: #6366F1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+}

@@ -1,0 +1,147 @@
+.features {
+  background: var(--bg-light);
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-header h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.features-header p {
+  font-size: 18px;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.feature-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.feature-card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-red);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.features-tech {
+  text-align: center;
+  padding: 50px 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.features-tech h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  padding: 12px 24px;
+  background: var(--bg-gray);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-dark);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: var(--primary-red);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(185, 28, 28, 0.3);
+}
+
+@media (max-width: 768px) {
+  .features-header h2 {
+    font-size: 36px;
+  }
+
+  .features-header p {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 30px 25px;
+  }
+
+  .features-tech {
+    padding: 40px 20px;
+  }
+
+  .features-tech h3 {
+    font-size: 24px;
+  }
+
+  .tech-badge {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
