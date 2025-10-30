@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Download App</h4>
           <div className="footer-download-buttons">
-            <a href="#" className="footer-download-btn">
+            <a href="https://apps.apple.com/mk/app/gogevgelija/id6753878546" target="_blank" rel="noopener noreferrer" className="footer-download-btn">
               <FaApple size={20} />
               <span>App Store</span>
             </a>

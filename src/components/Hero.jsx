@@ -62,11 +62,11 @@ const Hero = () => {
         </motion.div>
 
         <motion.div className="hero-buttons" variants={fadeIn}>
-          <a href="#download" className="btn btn-primary">
+          <a href="https://apps.apple.com/mk/app/gogevgelija/id6753878546" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             <FaApple size={20} />
             Download on App Store
           </a>
-          <a href="#download" className="btn btn-secondary">
+          <a href="#" className="btn btn-secondary">
             <FaGooglePlay size={18} />
             Get it on Google Play
           </a>
