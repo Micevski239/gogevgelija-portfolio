@@ -226,6 +226,17 @@
   text-align: center;
 }
 
+.error-message {
+  padding: 16px;
+  background: #F8D7DA;
+  border: 1px solid #F5C6CB;
+  border-radius: 12px;
+  color: #721C24;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .contact-header h2 {
     font-size: 36px;

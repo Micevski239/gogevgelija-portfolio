@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Screenshots from './components/Screenshots'
-import Download from './components/Download'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
@@ -15,7 +14,6 @@ function App() {
       <Hero />
       <Features />
       <Screenshots />
-      <Download />
       <Contact />
       <Footer />
     </div>

@@ -15,6 +15,8 @@ const Contact = () => {
     message: ''
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     setFormData({
@@ -23,14 +25,40 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+    setIsSubmitting(true)
+    setError(null)
+
+    const formDataToSend = new FormData()
+    formDataToSend.append('access_key', '35b4b271-fd48-44b1-8c93-f44c8d6dd316')
+    formDataToSend.append('name', formData.name)
+    formDataToSend.append('email', formData.email)
+    formDataToSend.append('subject', formData.subject)
+    formDataToSend.append('message', formData.message)
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => {
+          setSubmitted(false)
+        }, 5000)
+      } else {
+        setError('Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      setError('Failed to send message. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -62,8 +90,8 @@ const Contact = () => {
               </div>
               <div className="info-details">
                 <h4>Email</h4>
-                <p>info@gogevgelija.com</p>
-                <p>support@gogevgelija.com</p>
+                <p>gogevgelija@gmail.com</p>
+            
               </div>
             </div>
 
@@ -73,8 +101,8 @@ const Contact = () => {
               </div>
               <div className="info-details">
                 <h4>Phone</h4>
-                <p>+389 XX XXX XXX</p>
-                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                <p>+389 78 408 779</p>
+            
               </div>
             </div>
 
@@ -84,8 +112,8 @@ const Contact = () => {
               </div>
               <div className="info-details">
                 <h4>Location</h4>
-                <p>Gevgelija</p>
-                <p>North Macedonia</p>
+                <p>Gevgelija, North Macedonia</p>
+              
               </div>
             </div>
           </div>
@@ -93,15 +121,13 @@ const Contact = () => {
           <div className="social-links">
             <h4>Follow Us</h4>
             <div className="social-icons">
-              <a href="#" className="social-icon facebook">
+              <a href="https://www.facebook.com/profile.php?id=61583165964764" className="social-icon facebook">
                 <FaFacebook />
               </a>
-              <a href="#" className="social-icon instagram">
+              <a href="https://www.instagram.com/gogevgelija/" className="social-icon instagram">
                 <FaInstagram />
               </a>
-              <a href="#" className="social-icon twitter">
-                <FaTwitter />
-              </a>
+            
             </div>
           </div>
         </motion.div>
@@ -170,9 +196,13 @@ const Contact = () => {
               className="submit-btn"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              disabled={submitted}
+              disabled={submitted || isSubmitting}
             >
-              {submitted ? (
+              {isSubmitting ? (
+                <>
+                  <span>Sending...</span>
+                </>
+              ) : submitted ? (
                 <>
                   <span>Message Sent!</span>
                 </>
@@ -191,6 +221,16 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
               >
                 Thank you for contacting us! We'll get back to you soon.
+              </motion.div>
+            )}
+
+            {error && (
+              <motion.div
+                className="error-message"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                {error}
               </motion.div>
             )}
           </form>

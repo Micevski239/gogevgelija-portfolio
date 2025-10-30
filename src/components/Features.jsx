@@ -9,7 +9,7 @@ import {
   FaNewspaper,
   FaHeart,
   FaLanguage,
-  FaMoon,
+  FaCalendarPlus,
   FaUserCircle,
   FaBell,
   FaShieldAlt,
@@ -54,9 +54,9 @@ const Features = () => {
       description: 'Full English and Macedonian language support with seamless switching. Choose your preferred language anytime.'
     },
     {
-      icon: <FaMoon />,
-      title: 'Dark Mode',
-      description: 'Beautiful light and dark themes with automatic system preference detection. Easy on the eyes, day or night.'
+      icon: <FaCalendarPlus />,
+      title: 'Calendar Integration',
+      description: 'Add events directly to your device calendar. Get reminders so you never miss concerts, festivals, or special occasions.'
     },
     {
       icon: <FaUserCircle />,
@@ -134,25 +134,6 @@ const Features = () => {
             <p>{feature.description}</p>
           </motion.div>
         ))}
-      </motion.div>
-
-      <motion.div
-        className="features-tech"
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.5 }}
-      >
-        <h3>Built with Modern Technology</h3>
-        <div className="tech-stack">
-          <span className="tech-badge">React Native</span>
-          <span className="tech-badge">Expo</span>
-          <span className="tech-badge">TypeScript</span>
-          <span className="tech-badge">Django REST</span>
-          <span className="tech-badge">PostgreSQL</span>
-          <span className="tech-badge">JWT Auth</span>
-          <span className="tech-badge">React Query</span>
-          <span className="tech-badge">i18next</span>
-        </div>
       </motion.div>
     </section>
   )

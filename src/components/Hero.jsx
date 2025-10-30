@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
+import logo from '../assets/gogevgelija-logo.png'
 import './Hero.css'
 
 const Hero = () => {
@@ -30,7 +31,7 @@ const Hero = () => {
         variants={stagger}
       >
         <motion.div className="hero-logo" variants={fadeIn}>
-          <img src="/GoGevgelija-01.jpg" alt="GoGevgelija Logo" />
+          <img src={logo} alt="GoGevgelija Logo" />
         </motion.div>
 
         <motion.h1 variants={fadeIn}>
@@ -73,11 +74,11 @@ const Hero = () => {
 
         <motion.div className="hero-stats" variants={fadeIn}>
           <div className="stat">
-            <h3>100+</h3>
+            <h3>20+</h3>
             <p>Local Listings</p>
           </div>
           <div className="stat">
-            <h3>50+</h3>
+            <h3>10+</h3>
             <p>Events Monthly</p>
           </div>
           <div className="stat">

@@ -16,17 +16,15 @@ const Footer = () => {
           <p className="footer-description">
             Your complete guide to discovering the best of Gevgelija. Explore attractions, events, promotions, and more.
           </p>
-          <div className="footer-social">
-            <a href="#" className="social-link facebook">
-              <FaFacebook />
-            </a>
-            <a href="#" className="social-link instagram">
-              <FaInstagram />
-            </a>
-            <a href="#" className="social-link twitter">
-              <FaTwitter />
-            </a>
-          </div>
+           <div className="social-icons">
+                       <a href="https://www.facebook.com/profile.php?id=61583165964764" className="social-icon facebook">
+                         <FaFacebook />
+                       </a>
+                       <a href="https://www.instagram.com/gogevgelija/" className="social-icon instagram">
+                         <FaInstagram />
+                       </a>
+                     
+                     </div>
         </div>
 
         <div className="footer-section">
@@ -73,7 +71,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          © {currentYear} GoGevgelija. All rights reserved. Made with <FaHeart className="heart-icon" /> in Gevgelija, North Macedonia
+          © {currentYear} GoGevgelija. All rights reserved
         </p>
       </div>
     </footer>

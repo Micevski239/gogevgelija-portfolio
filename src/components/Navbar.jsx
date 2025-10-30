@@ -37,7 +37,6 @@ const Navbar = () => {
     >
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/logo.png" alt="GoGevgelija" />
           <span>GoGevgelija</span>
         </div>
 

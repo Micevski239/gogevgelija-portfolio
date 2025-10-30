@@ -1,60 +1,45 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import scr1 from '../assets/scr1.jpg'
+import scr2 from '../assets/scr2.jpg'
+import scr3 from '../assets/scr3.jpg'
+import scr4 from '../assets/scr4.jpg'
+import scr5 from '../assets/scr5.jpg'
 import './Screenshots.css'
 
 const Screenshots = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const [activeTab, setActiveTab] = useState('light')
 
-  const screenshots = {
-    light: [
-      {
-        title: 'Home Screen',
-        description: 'Featured content and upcoming events at a glance'
-      },
-      {
-        title: 'Listings',
-        description: 'Browse restaurants, hotels, and attractions'
-      },
-      {
-        title: 'Event Details',
-        description: 'Complete event information with join options'
-      },
-      {
-        title: 'Promotions',
-        description: 'Exclusive deals and discount codes'
-      },
-      {
-        title: 'Profile',
-        description: 'Manage your preferences and wishlist'
-      }
-    ],
-    dark: [
-      {
-        title: 'Dark Mode Home',
-        description: 'Beautiful dark theme for comfortable viewing'
-      },
-      {
-        title: 'Dark Listings',
-        description: 'Browse with reduced eye strain at night'
-      },
-      {
-        title: 'Dark Events',
-        description: 'Events look great in dark mode too'
-      },
-      {
-        title: 'Dark Promotions',
-        description: 'Deals that pop in dark theme'
-      },
-      {
-        title: 'Dark Profile',
-        description: 'OLED-friendly dark interface'
-      }
-    ]
-  }
+  const screenshots = [
+    {
+      image: scr1,
+      title: 'Home Screen',
+      description: 'Featured content and upcoming events at a glance'
+    },
+    {
+      image: scr2,
+      title: 'Listings',
+      description: 'Browse restaurants, hotels, and attractions'
+    },
+    {
+      image: scr3,
+      title: 'Event Details',
+      description: 'Complete event information with join options'
+    },
+    {
+      image: scr4,
+      title: 'Promotions',
+      description: 'Exclusive deals and discount codes'
+    },
+    {
+      image: scr5,
+      title: 'Profile',
+      description: 'Manage your preferences and wishlist'
+    }
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,27 +69,7 @@ const Screenshots = () => {
         transition={{ duration: 0.6 }}
       >
         <h2>Beautiful Design</h2>
-        <p>Experience GoGevgelija's stunning interface in both light and dark modes</p>
-      </motion.div>
-
-      <motion.div
-        className="screenshots-tabs"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <button
-          className={`tab-btn ${activeTab === 'light' ? 'active' : ''}`}
-          onClick={() => setActiveTab('light')}
-        >
-          Light Mode
-        </button>
-        <button
-          className={`tab-btn ${activeTab === 'dark' ? 'active' : ''}`}
-          onClick={() => setActiveTab('dark')}
-        >
-          Dark Mode
-        </button>
+        <p>Experience GoGevgelija's stunning and intuitive interface</p>
       </motion.div>
 
       <motion.div
@@ -112,27 +77,16 @@ const Screenshots = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        key={activeTab}
       >
-        {screenshots[activeTab].map((screenshot, index) => (
+        {screenshots.map((screenshot, index) => (
           <motion.div
             key={index}
             className="screenshot-card"
             variants={itemVariants}
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
           >
-            <div className={`screenshot-mockup ${activeTab}`}>
-              <div className="mockup-notch"></div>
-              <div className="mockup-content">
-                <div className="placeholder-screen">
-                  <div className="placeholder-header"></div>
-                  <div className="placeholder-content">
-                    <div className="placeholder-card"></div>
-                    <div className="placeholder-card"></div>
-                    <div className="placeholder-card small"></div>
-                  </div>
-                </div>
-              </div>
+            <div className="screenshot-image">
+              <img src={screenshot.image} alt={screenshot.title} />
             </div>
             <h3>{screenshot.title}</h3>
             <p>{screenshot.description}</p>
