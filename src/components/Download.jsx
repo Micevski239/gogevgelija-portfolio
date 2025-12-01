@@ -36,7 +36,9 @@ const Download = () => {
             </motion.a>
 
             <motion.a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.micevski239.gogevgelija&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
               className="download-btn google"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

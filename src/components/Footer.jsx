@@ -56,7 +56,7 @@ const Footer = () => {
               <FaApple size={20} />
               <span>App Store</span>
             </a>
-            <a href="#" className="footer-download-btn">
+            <a href="https://play.google.com/store/apps/details?id=com.micevski239.gogevgelija&hl=en" target="_blank" rel="noopener noreferrer" className="footer-download-btn">
               <FaGooglePlay size={18} />
               <span>Google Play</span>
             </a>

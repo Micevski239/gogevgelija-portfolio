@@ -66,7 +66,7 @@ const Hero = () => {
             <FaApple size={20} />
             Download on App Store
           </a>
-          <a href="#" className="btn btn-secondary">
+          <a href="https://play.google.com/store/apps/details?id=com.micevski239.gogevgelija&hl=en" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
             <FaGooglePlay size={18} />
             Get it on Google Play
           </a>
